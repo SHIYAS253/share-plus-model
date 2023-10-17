@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:model_class_sample/controller/home_screen_controller.dart';
 
 import '../../model/my_name_model.dart';
-import 'widgets/my_name_card.dart';
+import 'widgets/card.dart';
+
+import 'package:share_plus/share_plus.dart';
 
 
 class home extends StatefulWidget {
@@ -20,9 +22,7 @@ class _homeState extends State<home> {
     (
  
       floatingActionButton: FloatingActionButton(onPressed: () {
-        setState(() {
-          obj.addName(MyNameModel(name: "amaljith"));
-        });
+       Share.share("https://www.youtube.com/");
       }),
       body: SafeArea(
           child: ListView.builder(
@@ -31,8 +31,7 @@ class _homeState extends State<home> {
                     name: obj.myNameList[index].name,
                     color: obj.myNameList[index].containerColor,
                     onDeletePressed: () {
-                      obj.deleteName(index);
-                      //setstate(() {});
+                      Share.share("https://www.youtube.com/");
                     },
                   )
                   )
